@@ -4,6 +4,7 @@ const { send } = require('process');
 
 const app = express();
 
+
 app.use(express.static('public'))
 
 app.get('/mercadoLiebre',(req,res) =>{
@@ -15,13 +16,9 @@ app.get('/register',(req,res) =>{
 });
 
 app.get('/login',(req,res) =>{
-<<<<<<< HEAD:ML/app.js
-    res.sendFile(path.join(__dirname,'views/html/login.html'))
-=======
     res.sendFile(path.join(__dirname,'/views/html/login.html'))
->>>>>>> d7d5e1bbab621a5b6c158951a3231e207e5541d5:ML/src/app.js
 });
 
-app.listen(3000, () =>{
+app.listen(process.env.port || 3000, () =>{
     console.log('Servidor corriendo en el puerto 3000')
 });
